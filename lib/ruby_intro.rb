@@ -3,15 +3,39 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  # loop through arr accumulating sum
+  sum = 0
+  for element in arr
+    sum = sum + element
+  end
+  return sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  # edge cases
+  if arr.length() == 0
+    return 0
+  end
+  if arr.length() == 1
+    return arr[0]
+  end
+  # sort array than return sum of the two largest values
+  sorted_arr = arr.sort()
+  return sorted_arr[sorted_arr.length()-1] + sorted_arr[sorted_arr.length()-2]
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  # nested list to add all elements together
+  for element in arr
+    if arr.index(element) < arr.length
+      for sub_element in arr.slice(arr.index(element)+1, arr.length())
+        if element + sub_element == n
+          return true
+        end
+      end
+    end
+  end
+  return false
 end
 
 # Part 2
