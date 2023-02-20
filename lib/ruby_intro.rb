@@ -75,5 +75,19 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  # constructor with isbn and price
+  def initialize(isbn, price)
+    # ensure isbn is valid number
+    raise ArgumentError.new("Expected non-empty string for isbn") if isbn == ''
+    raise ArgumentError.new("Expected a positive,non-zero price") if price <= 0
+
+    @isbn = isbn
+    @price = price
+  end
+  attr_accessor :isbn
+  attr_accessor :price
+
+  def price_as_string()
+    return "$" + "%.2f" % @price
+  end
 end
