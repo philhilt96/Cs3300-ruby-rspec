@@ -41,15 +41,35 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.length() == 0
+    return false
+  end
+  # check if first character matches regex range for constants
+  if s[0].downcase =~ /^[b-df-hj-np-tv-z]/
+    return true
+  end
+  return false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s == ''
+    return false
+  end
+  remove_whitespace = s.split(" ").join()
+  puts remove_whitespace
+  # check that argument is valid binary
+  if remove_whitespace =~ /^[0*|1*]*$/
+    # convert to base 2 binary and check if muyltiple of 4
+    binary_s = remove_whitespace.to_i(2)
+    if binary_s % 4 == 0
+      return true
+    end
+  end
+  return false
 end
 
 # Part 3
