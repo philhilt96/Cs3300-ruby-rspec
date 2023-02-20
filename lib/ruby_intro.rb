@@ -60,7 +60,6 @@ def binary_multiple_of_4? s
     return false
   end
   remove_whitespace = s.split(" ").join()
-  puts remove_whitespace
   # check that argument is valid binary
   if remove_whitespace =~ /^[0*|1*]*$/
     # convert to base 2 binary and check if muyltiple of 4
